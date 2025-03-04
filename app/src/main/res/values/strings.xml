@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">MiracleStar</string>
+    <string name="main_friend_page_name">挚友</string>
+    <string name="main_me_page_name">本尊</string>
+    <string name="password">密码</string>
+    <string name="username">用户名</string>
+    <string name="Captcha">验证码</string>
+    <string name="go">Go</string>
+    <string name="registered">还没有账号? 注册</string>
+    <string name="SignInMiracleStar">Welcom To Sign In MiracleStar.</string>
+    <string name="search">搜索</string>
+    <string name="insert_friend">添加挚友</string>
+    <string name="message">通灵</string>
+    <string name="setting">设置</string>
+    <string name="friend">挚友</string>
+    <string name="me">本尊</string>
+    <string name="insert_blog">添加卷轴</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="more">更多</string>
+    <string name="friend_name">昵称</string>
+    <string name="friend_data">个人详情</string>
+    <string name="send">发送</string>
+    <string name="send_message">发送消息</string>
+    <string name="user_relationship">关系:</string>
+    <string name="friend_date">契约时长:</string>
+    <string name="my_name">Freedom</string>
+    <string name="app_id_string">MSID:</string>
+    <string name="main_message_page_name">通灵</string>
+    <string name="main_me_options_account_security">账号安全</string>
+    <string name="main_me_options_setting">软件设置</string>
+    <string name="main_me_options_dataview">数据分析</string>
+    <string name="main_me_options_blog">卷轴管理</string>
+    <string name="main_me_options_game">游戏展示</string>
+    <string name="main_me_options_music">音乐创作</string>
+    <string name="main_me_options_shop">物品商店</string>
+    <string name="main_me_options_software_shop">软件商店</string>
+    <string name="sign_out">退出账号</string>
+    <string name="main_me_my_data">个人信息</string>
+    <string name="my_home_page_avatar_select_title">修改头像</string>
+    <string name="my_home_page_avatar_select_message">看来你对当前头像不满意，请点击下方确认按钮修改头像。</string>
+    <string name="cancel">取消</string>
+    <string name="accept">确认</string>
+    <string name="search_data">添加好友(MSID):</string>
+    <string name="search_button">搜索</string>
+</resources>

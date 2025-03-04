@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_list_friend"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="@dimen/list_friend_height">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/list_friend_avatar_image"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@mipmap/ke_da_duck"
+                    />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp">
+
+                        <TextView
+                            android:id="@+id/list_friend_name_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="姚远"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/list_message_name_text_size"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:text="@string/friend_date"
+                                />
+
+                            <TextView
+                                android:id="@+id/list_friend_date_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                />
+
+                            <ImageButton
+                                android:id="@+id/list_friend_icon_image"
+                                android:src="@drawable/list_friend_icon"
+                                android:layout_marginLeft="10dp"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp">
+
+                            </ImageButton>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--分界线-->
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"/>
+
+    </LinearLayout>
+
+</LinearLayout>

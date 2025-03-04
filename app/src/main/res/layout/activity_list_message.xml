@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_list_message"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_message_height"
+    android:orientation="horizontal"
+    tools:context=".ListMessageActivity">
+
+<!--头像内容-->
+    <ImageView
+        android:id="@+id/list_message_avatar_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/app_icon"
+        />
+
+<!--对话内容-->
+    <LinearLayout
+        android:id="@+id/list_message_c1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/list_message_c2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+<!--显示昵称，和新消息-->
+            <LinearLayout
+                android:id="@+id/list_message_c3_left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/list_message_name_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="姚远是傻逼"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/list_message_name_text_size" />
+
+                <TextView
+                    android:id="@+id/list_message_content_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@string/appbar_scrolling_view_behavior"/>
+
+            </LinearLayout>
+
+<!--显示对话信息-->
+            <LinearLayout
+                android:id="@+id/list_message_c3_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/list_message_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/list_message_time_text_size"
+                    android:text="下午1:20"
+                    />
+
+                <ImageView
+                    android:id="@+id/list_message_icon_image"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="end"
+                    android:src="@drawable/list_message_icon"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+<!--分界线-->
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,101 @@
+plugins {
+    alias(libs.plugins.android.application)
+    //room插件
+    id 'androidx.room' version "2.6.1" apply true
+}
+
+android {
+    namespace 'com.cn.miraclestar'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.cn.miraclestar"
+        minSdk 30
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    buildFeatures{
+        viewBinding = true
+        dataBinding = true
+    }
+
+    // 添加 Room 配置
+    room {
+        // Applies to 'demoDebug' only
+        schemaDirectory "demoDebug", "$projectDir/schemas/demoDebug"
+
+        // Applies to 'demoDebug' and 'demoRelease'
+        schemaDirectory "demo", "$projectDir/schemas/demo"
+
+        // Applies to 'demoDebug' and 'fullDebug'
+        schemaDirectory "debug", "$projectDir/schemas/debug"
+
+        // Applies to variants that aren't matched by other configurations.
+        schemaDirectory "$projectDir/schemas"
+    }
+}
+
+
+
+
+dependencies {
+    //图片加载
+    implementation libs.glide
+    annotationProcessor libs.compiler
+
+    // RxJava2 核心库
+    //noinspection UseTomlInstead
+    implementation libs.rxjava
+    // RxAndroid，提供 Android 特定的调度器（如主线程调度器）
+    implementation libs.rxandroid
+    implementation libs.room.runtime
+
+    // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
+    // See KSP Quickstart to add KSP to your build
+
+    // If this project only uses Java source, use the Java annotationProcessor
+    // No additional plugins are necessary
+    annotationProcessor libs.room.compiler
+
+    // optional - RxJava2 support for Room
+    implementation libs.room.rxjava2
+
+    // optional - RxJava3 support for Room
+    implementation libs.room.rxjava3
+
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation libs.room.guava
+
+    // optional - Test helpers
+    testImplementation libs.room.testing
+
+    // optional - Paging 3 Integration
+    implementation libs.room.paging
+
+    implementation libs.retrofit
+    implementation libs.converter.gson
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.legacy.support.v4
+    implementation libs.recyclerview
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/main_show_message"
+        android:enabled="true"
+        android:icon="@drawable/message_icon"
+        android:title="@string/message"/>
+    <item
+        android:id="@+id/main_show_friend"
+        android:enabled="true"
+        android:icon="@drawable/friend_icon"
+        android:title="@string/friend"/>
+    <item
+        android:id="@+id/main_show_me"
+        android:enabled="true"
+        android:icon="@drawable/me_icon"
+        android:title="@string/me"/>
+</menu>
