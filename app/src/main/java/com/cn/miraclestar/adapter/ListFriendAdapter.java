@@ -1,5 +1,6 @@
 package com.cn.miraclestar.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -42,7 +43,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FriendViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FriendViewHolder holder, @SuppressLint("RecyclerView") int position) {
         // 这里可以根据需求绑定数据到视图
         // 例如：holder.textView.setText(friendList.get(position));
 
@@ -73,6 +74,7 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
         ImageView avatar = holder.itemView.findViewById(R.id.list_friend_avatar_image);
         Glide.with(context)
                 .load(UrlConstant.AVATAR_URL+_list_friend_data.get(position).getAvatarUrl())
+                .error(R.mipmap.avatar_err)
                 .into(avatar);
 
         TextView friendTime = holder.itemView.findViewById(R.id.list_friend_date_text);
@@ -83,6 +85,8 @@ public class ListFriendAdapter extends RecyclerView.Adapter<ListFriendAdapter.Fr
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, FriendHomePageActivity.class);
+                intent.putExtra("userId",_list_friend_data.get(position).getUserId());
+                System.out.println("----------- >"+_list_friend_data.get(position).getUserId());
                 context.startActivity(intent);
             }
         });

@@ -16,4 +16,9 @@ public interface RequestFriendRelationshipHttpService {
     @GET("/friendrelationship/list/{userId}")
     Call<Result<List<RequestFriendRelationshipDto>>> getFriendList(@Header("Authorization") String authorization,@Path("userId") Long userId);
 
+    @GET("/friendrelationship/{userId}")
+    Call<Result<RequestFriendRelationshipDto>> getFriendData(@Header("Authorization") String authorization,@Path("userId") Long userId);
+
+    @GET("/friendrelationship/isfriend")
+    Call<Result<Short>> getIsFriend(@Header("Authorization") String authorization , @Query("userId") Long userId);
 }

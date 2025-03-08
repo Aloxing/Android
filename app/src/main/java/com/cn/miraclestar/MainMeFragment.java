@@ -267,8 +267,9 @@ public class MainMeFragment extends Fragment {
                 if(result.getCode() % 10 == 1){
                     String avatar_url = UrlConstant.AVATAR_URL+result.getData().getAvatarUrl();
 
-                    Glide.with(getActivity())
+                    Glide.with(requireActivity())
                             .load(avatar_url)
+                            .error(R.mipmap.avatar_err)
                             .into(avatar);
                 }
             }
@@ -341,9 +342,10 @@ public class MainMeFragment extends Fragment {
                             public void onSuccess(Result<Avatars> result) {
                                 if(result.getCode() % 10 == 1){
                                     String avatar_url = UrlConstant.AVATAR_URL+result.getData().getAvatarUrl();
-                                    System.out.println("---------- "+avatar_url);
-                                    Glide.with(getActivity())
+                                    //System.out.println("---------- "+avatar_url);
+                                    Glide.with(requireActivity())
                                             .load(avatar_url)
+                                            .error(R.mipmap.avatar_err)
                                             .into(avatar);
                                 }
                             }

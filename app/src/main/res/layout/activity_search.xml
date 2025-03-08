@@ -14,7 +14,6 @@
         android:orientation="horizontal">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card"
             android:layout_width="0dp"
             android:layout_weight="9"
             android:layout_height="wrap_content"
@@ -23,6 +22,7 @@
             android:layout_gravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_input_friend_id_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="40dp"
@@ -39,6 +39,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <Button
+            android:id="@+id/search_chick_friend_id_button"
             android:layout_marginRight="8dp"
             android:backgroundTint="@color/send_button_color"
             android:layout_gravity="center"
@@ -64,32 +65,17 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_add_friend_data_space"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:orientation="horizontal">
-
-                    
-
-                </LinearLayout>
-
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_gravity="bottom"/>
-
-            </LinearLayout>
+            </androidx.recyclerview.widget.RecyclerView>
 
         </ScrollView>
 

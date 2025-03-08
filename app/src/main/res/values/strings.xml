@@ -43,4 +43,6 @@
     <string name="accept">确认</string>
     <string name="search_data">添加好友(MSID):</string>
     <string name="search_button">搜索</string>
+    <string name="Switch_Accounts">切换账号</string>
+    <string name="Exit_Accounts">退出账号</string>
 </resources>

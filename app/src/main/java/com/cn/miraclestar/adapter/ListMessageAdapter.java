@@ -57,6 +57,7 @@ public class ListMessageAdapter extends RecyclerView.Adapter<ListMessageAdapter.
                 }
                 return false;
             }
+
         });
 
         //修改头像
@@ -96,8 +97,6 @@ public class ListMessageAdapter extends RecyclerView.Adapter<ListMessageAdapter.
 
         public ListMessageViewHolder(@NonNull View itemView){
             super(itemView);
-
-
         }
 
     }

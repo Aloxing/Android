@@ -99,13 +99,16 @@ public class MainFriendFragment extends Fragment {
             }
 
             @Override
+            public void onSuccessOne(Result<RequestFriendRelationshipDto> result) {
+
+            }
+
+            @Override
             public void onFailure(String errorMessage) {
                 System.out.println("----- " + errorMessage + " -----");
                 Toast.makeText(getActivity(), "网络错误", Toast.LENGTH_SHORT).show();
             }
         });
-
-
 
         return view;
     }

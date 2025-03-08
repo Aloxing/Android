@@ -32,7 +32,6 @@ android {
         viewBinding = true
         dataBinding = true
     }
-
     // 添加 Room 配置
     room {
         // Applies to 'demoDebug' only
@@ -48,9 +47,6 @@ android {
         schemaDirectory "$projectDir/schemas"
     }
 }
-
-
-
 
 dependencies {
     //图片加载
