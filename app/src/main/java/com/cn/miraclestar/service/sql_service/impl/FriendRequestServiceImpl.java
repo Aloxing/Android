@@ -6,7 +6,11 @@ import com.cn.miraclestar.pojo.Result;
 import com.cn.miraclestar.service.http_service.FriendRequestHttpService;
 import com.cn.miraclestar.service.sql_service.FriendRequestService;
 import com.cn.miraclestar.service.sql_service.callbacks.FriendRequestCallBack;
+import com.cn.miraclestar.service.sql_service.callbacks.FriendRequestListCallBack;
+import com.cn.miraclestar.service.sql_service.callbacks.FriendRequestLongCallBack;
 import com.cn.miraclestar.sql.entity.FriendRequest;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,6 +37,45 @@ public class FriendRequestServiceImpl implements FriendRequestService {
             @Override
             public void onFailure(Call<Result<FriendRequest>> call, Throwable t) {
                 friendRequestCallBack.onFailure("Network error: "+t.getMessage());
+            }
+        });
+    }
+
+    @Override
+    public void getFriendRequestList(String token, Long userId, FriendRequestListCallBack friendRequestListCallBack) {
+        Call<Result<List<FriendRequest>>> call = _friend_request_http_service.getFriendRequest(token,userId);
+
+        call.enqueue(new Callback<Result<List<FriendRequest>>>() {
+            @Override
+            public void onResponse(Call<Result<List<FriendRequest>>> call, Response<Result<List<FriendRequest>>> response) {
+                if(response.isSuccessful())
+                    friendRequestListCallBack.onSuccess(response.body());
+                else
+                    friendRequestListCallBack.onFailure("Request failed: " + response.code());
+            }
+
+            @Override
+            public void onFailure(Call<Result<List<FriendRequest>>> call, Throwable t) {
+                friendRequestListCallBack.onFailure("Network error: "+t.getMessage());
+            }
+        });
+    }
+
+    @Override
+    public void deleteFriendRequest(String token, Long userId, FriendRequestLongCallBack friendRequestLongCallBack) {
+        Call<Result<Long>> call = _friend_request_http_service.deleteFriendRequest(token,userId);
+        call.enqueue(new Callback<Result<Long>>() {
+            @Override
+            public void onResponse(Call<Result<Long>> call, Response<Result<Long>> response) {
+                if(response.isSuccessful())
+                    friendRequestLongCallBack.onSuccess(response.body());
+                else
+                    friendRequestLongCallBack.onFailure("Request failed: " + response.code());
+            }
+
+            @Override
+            public void onFailure(Call<Result<Long>> call, Throwable t) {
+                friendRequestLongCallBack.onFailure("Network error: "+t.getMessage());
             }
         });
     }

@@ -18,4 +18,9 @@
         android:title="@string/insert_blog"
         app:showAsAction="never" />
 
+    <item android:id="@+id/main_more_see_message"
+        android:icon="@drawable/add_blog_icon"
+        android:title="@string/see_message"
+        app:showAsAction="never"/>
+
 </menu>

@@ -68,7 +68,12 @@ public class MainActivity extends AppCompatActivity {
 
                             Intent intent = new Intent(MainActivity.this, SearchActivity.class);
                             startActivity(intent);
+                            return true;
+                        }
+                        if(item.getItemId() == R.id.main_more_see_message){
 
+                            Intent intent = new Intent(MainActivity.this, SeeMessageActivity.class);
+                            startActivity(intent);
                             return true;
                         }
                         return false;

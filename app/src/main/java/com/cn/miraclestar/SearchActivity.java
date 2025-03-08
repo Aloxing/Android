@@ -81,7 +81,7 @@ public class SearchActivity extends AppCompatActivity {
                             @Override
                             public void onSuccessOne(Result<RequestFriendRelationshipDto> result) {
                                 if(result.getCode() % 10 == 1){
-                                    System.out.println("----------- "+result.getData().toString());
+                                    //System.out.println("----------- "+result.getData().toString());
                                     SearchFriendAdapter searchFriendAdapter = new SearchFriendAdapter(SearchActivity.this,result.getData());
                                     recyclerView.setAdapter(searchFriendAdapter);
                                 }

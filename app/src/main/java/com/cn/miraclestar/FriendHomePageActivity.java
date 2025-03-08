@@ -1,16 +1,18 @@
 package com.cn.miraclestar;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.bumptech.glide.Glide;
 import com.cn.miraclestar.constants.UrlConstant;
 import com.cn.miraclestar.databinding.ActivityFriendHomePageBinding;
@@ -59,6 +61,7 @@ public class FriendHomePageActivity extends AppCompatActivity {
         backMainPage();
         setFrienData();
         addFriend();
+        gotoSend();
     }
     private void initData(){
         _token_manager_util = new TokenManagerUtil(FriendHomePageActivity.this);
@@ -72,7 +75,31 @@ public class FriendHomePageActivity extends AppCompatActivity {
                 });
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void gotoSend(){
+
+        Resources resources = FriendHomePageActivity.this.getResources();
+
+        _activity_friend_home_page_binding.friendHomeSendChickLl
+                        .setOnTouchListener(new View.OnTouchListener() {
+                            @Override
+                            public boolean onTouch(View v, MotionEvent event) {
+                                if(event.getAction() == MotionEvent.ACTION_DOWN){
+                                    v.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.light_gray, null));
+//                        return false;
+                                }
+                                if(event.getAction() == MotionEvent.ACTION_UP){
+                                    v.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.white, null));
+//                        return true;
+                                }
+                                if(event.getAction() == MotionEvent.ACTION_CANCEL){
+                                    v.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.white, null));
+//                        return true;
+                                }
+                                return false;
+                            }
+                        });
+
         _activity_friend_home_page_binding.friendHomeSendChickLl
                 .setOnClickListener(v->{
                     Intent intent = new Intent(FriendHomePageActivity.this, SendMessageActivity.class);
@@ -80,14 +107,36 @@ public class FriendHomePageActivity extends AppCompatActivity {
                 });
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void addFriend(){
 
+        Resources resources = FriendHomePageActivity.this.getResources();
         Intent intent = getIntent();
         Long userId = intent.getLongExtra("userId",-1);
 
         _activity_friend_home_page_binding.friendHomeAddChickLl
+                .setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if(event.getAction() == MotionEvent.ACTION_DOWN){
+                            v.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.light_gray, null));
+//                        return false;
+                        }
+                        if(event.getAction() == MotionEvent.ACTION_UP){
+                            v.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.white, null));
+//                        return true;
+                        }
+                        if(event.getAction() == MotionEvent.ACTION_CANCEL){
+                            v.setBackgroundColor(ResourcesCompat.getColor(resources, R.color.white, null));
+//                        return true;
+                        }
+                        return false;
+                    }
+                });
+
+        _activity_friend_home_page_binding.friendHomeAddChickLl
                 .setOnClickListener(v->{
-                    FriendRequest friendRequest = new FriendRequest(null,Long.parseLong(_token_manager_util.getUserId()),userId,null);
+                    FriendRequest friendRequest = new FriendRequest(null,Long.parseLong(_token_manager_util.getUserId()),userId,null,null);
                     _friend_request_service.insertFriendRequest(_token_manager_util.getToken(), friendRequest, new FriendRequestCallBack() {
                         @Override
                         public void onSuccess(Result<FriendRequest> result) {
@@ -125,7 +174,7 @@ public class FriendHomePageActivity extends AppCompatActivity {
                             .into(_activity_friend_home_page_binding.friendHomePageAvatarImage);
 
                     _activity_friend_home_page_binding.friendHomePageIdText
-                            .setText(result.getData().getUserId().toString());
+                            .setText(getResources().getString(R.string.app_id_string)+result.getData().getUserId().toString());
 
                     _activity_friend_home_page_binding.friendHomePageNameText
                             .setText(result.getData().getUsername());
@@ -161,8 +210,5 @@ public class FriendHomePageActivity extends AppCompatActivity {
             }
 
         });
-
     }
-
-
 }

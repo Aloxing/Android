@@ -92,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="邮箱:"
-                android:textColor="@color/black"
+
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"/>
@@ -112,7 +112,7 @@
         <!--分界线-->
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="match_parent"
-            android:layout_height="4dp"
+            android:layout_height="1dp"
             android:layout_gravity="bottom"/>
 
 
@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="地址:"
-                android:textColor="@color/black"
+
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"/>
@@ -147,7 +147,7 @@
         <!--分界线-->
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="match_parent"
-            android:layout_height="4dp"
+            android:layout_height="1dp"
             android:layout_gravity="bottom"/>
 
         <LinearLayout
@@ -160,7 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="手机号:"
-                android:textColor="@color/black"
+
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"/>
@@ -180,7 +180,7 @@
         <!--分界线-->
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="match_parent"
-            android:layout_height="4dp"
+            android:layout_height="1dp"
             android:layout_gravity="bottom"/>
 
         <LinearLayout
@@ -195,7 +195,6 @@
                 android:text="个人卷轴:"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
                 android:layout_marginLeft="10dp"/>
 
             <TextView
@@ -217,7 +216,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/go_icon"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="10dp"
                 />
 
 
@@ -245,7 +244,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/sign"/>
 
 
         </LinearLayout>
@@ -266,7 +265,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/sign"/>
 
         </LinearLayout>
 

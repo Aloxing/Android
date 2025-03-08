@@ -17,6 +17,9 @@ public class FriendRequest {
     @ColumnInfo(name = "status")
     private String status;
 
+    @ColumnInfo(name = "receiver_avatar_url")
+    private String receiverAvatarUrl;
+
     public Integer getId() {
         return id;
     }
@@ -49,19 +52,33 @@ public class FriendRequest {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "FriendRequest [id=" + id + ", senderId=" + senderId + ", receiverId=" + receiverId + ", status="
-                + status + "]";
+    public String getReceiverAvatarUrl() {
+        return receiverAvatarUrl;
     }
 
-    public FriendRequest(Integer id, Long senderId, Long receiverId, String status) {
+    public void setReceiverAvatarUrl(String receiverAvatarUrl) {
+        this.receiverAvatarUrl = receiverAvatarUrl;
+    }
+
+    public FriendRequest(Integer id, Long senderId, Long receiverId, String status, String receiverAvatarUrl) {
         this.id = id;
         this.senderId = senderId;
         this.receiverId = receiverId;
         this.status = status;
+        this.receiverAvatarUrl = receiverAvatarUrl;
     }
 
     public FriendRequest() {
+    }
+
+    @Override
+    public String toString() {
+        return "FriendRequest{" +
+                "id=" + id +
+                ", senderId=" + senderId +
+                ", receiverId=" + receiverId +
+                ", status='" + status + '\'' +
+                ", receiverAvatarUrl='" + receiverAvatarUrl + '\'' +
+                '}';
     }
 }
